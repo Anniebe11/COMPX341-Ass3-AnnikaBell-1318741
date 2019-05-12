@@ -82,7 +82,7 @@
     it('with valid zip code', function() {
       reqMock = {
         query: {
-          zip: 79968
+          zip: Hamilton
         }
       };
 
@@ -169,7 +169,7 @@
     it('with valid zip code', function() {
       reqMock = {
         query: {
-          zip: 79968
+          zip: Auckland
         }
       };
 
