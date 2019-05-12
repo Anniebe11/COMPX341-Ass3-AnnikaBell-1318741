@@ -15,14 +15,14 @@
 
     describe('Get Weather', function() {
 
-    	it('with valid zip code', function(done) {
+    	it('with valid city name', function(done) {
         if(!appUrl) {
             assert.fail("Environment variable APP_URL is not defined");
             return done();
         }
         request({
       		method: 'GET',
-              url: appUrl + '/api/v1/getWeather?zip=78613'
+              url: appUrl + '/api/v1/getWeather?q=Hamilton'
           }, function(err, resp, body) {
           	if(err) {
           		assert.fail('Failed to get the response');
@@ -60,7 +60,7 @@
         }
         request({
       		method: 'GET',
-              url: appUrl + '/api/v1/getWeather?zip=78641'
+              url: appUrl + '/api/v1/getWeather?q=Auckland'
           }, function(err, resp, body) {
           	if(err) {
           		assert.fail('Failed to get the response');
