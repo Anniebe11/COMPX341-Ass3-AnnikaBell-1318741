@@ -14,6 +14,7 @@ exports.getWeather = function(req, res) {
 	var city = req.query.zip;
 	if( (city === null) || (typeof(city) === 'undefined') ) {
 		return res.status(400).send('city missing');
+		console.error("city missing");
 	}
 
 	var aurl = OPENWEATHERURL + '&q=' + city + ',nz';
@@ -45,9 +46,10 @@ exports.getWeather2 = function(req, res) {
 	var city = req.query.zip;
 	if( (city === null) || (typeof(city) === 'undefined') ) {
 		return res.status(400).send('city missing');
+		console.error("city missing");
 	}
 
-	var aurl = OPENWEATHERURL + '&q=' + city + ',us';
+	var aurl = OPENWEATHERURL + '&q=' + city + ',nz';
 
 	request({
 		method: 'GET',
