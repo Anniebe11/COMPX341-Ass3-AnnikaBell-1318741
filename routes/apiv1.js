@@ -16,7 +16,7 @@ exports.getWeather = function(req, res) {
 		return res.status(400).send('city missing');
 	}
 
-	var aurl = OPENWEATHERURL + '&q=' + city + ',nz&units=metric';
+	var aurl = OPENWEATHERURL + '&q=' + city + ',nz';
 
 	request({
 		method: 'GET',
@@ -28,7 +28,7 @@ exports.getWeather = function(req, res) {
     		//console.error("Failed to send request to openweathermap.org", err);
     	} else {
     		if(body.cod === 200) {
-    			var weath = "Conditions are " + body.weather[0].main + " and temperature is " + body.main.temp + ' C';
+    			var weath = "Conditions are " + body.weather[0].main + " and temperature is " + body.main.temp + ' F';
     			var response = {city: body.name, weather: weath};
     			return res.status(200).send(response);
     		} else {
@@ -47,7 +47,7 @@ router.get('/getWeather', exports.getWeather);
 		return res.status(400).send('city missing');
 	}
 
-	var aurl = OPENWEATHERURL + '&q=' + city + ',nz&units=metric';
+	var aurl = OPENWEATHERURL + '&q=' + city + ',nz';
 
 	request({
 		method: 'GET',
@@ -59,7 +59,7 @@ router.get('/getWeather', exports.getWeather);
     		//console.error("Failed to send request to openweathermap.org", err);
     	} else {
     		if(body.cod === 200) {
-    			var weath = "Conditions are " + body.weather[0].main + " and temperature is " + body.main.temp + ' C';
+    			var weath = "Conditions are " + body.weather[0].main + " and temperature is " + body.main.temp + ' F';
     			var response = {city: body.name, weather: weath};
     			return res.status(200).send(response);
     		} else {
