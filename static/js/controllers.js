@@ -49,15 +49,11 @@ ConsoleModule.controller('wcontroller', ['$scope', '$http', '$routeParams', '$ti
 				$scope.zip4Weather = response.data.weather;
 			} 
 		});
-        
+
+		// The marker, positioned at greytown
+        var greytown = {lat: -41.084, lng: 175.455};
+		var marker = new google.maps.Marker({position: greytown, map: map});
     };
     
 }]);
 
-var map;
-function initMap() {
-	map = new google.maps.Map(document.getElementById('map'), {
-		center: {lat: -41.084, lng: 175.455},
-		zoom: 8
-	);
-}
